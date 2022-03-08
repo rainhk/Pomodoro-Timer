@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <script src="timer.js"></script>
+    <script src="weather.js"></script>
+    <link rel="stylesheet" href="design.css"/>
+    <title>Pomodoro Timer</title>
+</head>
+<body style="background-color:lavenderblush">
+    <div>
+        <div style="text-align: right;">
+            <span id="clock" style="color:gray; font-size: 50px;">clock</span>
+            <span id="ampm" style="color:gray; font-size: 25px;">ampm</span>
+            
+        </div>
+        <div style = "text-align: right;">
+            <span id="city" style="color:gray; font-size: 25px;">city</span>
+            <span id="weather" style="color:gray; font-size: 25px;"><br>weather</span>
+            <span id="temperature" style="color:gray; font-size: 25px;"><br>temperature</span>
+        </div>
+    </div>
+    
+    <script>
+        var Time = document.getElementById("clock");
+        var Time_ampm = document.getElementById("ampm");
+
+        clock();
+        setInterval(clock, 500);
+
+        let pomoInterval;
+        let $time;
+        var break_time = true;
+        var tomatoes = " ";
+
+        var city = document.getElementById("city");
+        var temprature = document.getElementById("temperature");
+        var weather = document.getElementById("weather");
+
+        const API_KEY = '2e5f3bfd7f74ae5df34b850c66efd39c';
+        
+        navigator.geolocation.getCurrentPosition(location_latlon, onGeoError);
+    </script>
+    
+    <div class="center">
+        <button class="w-btn w-btn-gra1 w-btn-gra-anim" id="btn" type="button" onclick='pomoStart()'>Start</button>
+    </div>
+</body>
+</html>
